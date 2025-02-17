@@ -32,7 +32,8 @@ function inicio() {
 			}
 		}
 		if (i >= sec.length) {
-			tiempo = setTimeout(perder, 3000); //Inicia la cuenta del tiempo y si termina, se dispara la funcion perder.			
+			document.getElementById("mensaje-turno").innerText = "Es tu turno"; // Muestra el mensaje
+			tiempo = setTimeout(perder, 6000); // Extiende el tiempo de espera a 6 segundos
 		}
 	}
 
@@ -64,6 +65,8 @@ function inicio() {
 	}
 
 	function marcar(event) {
+
+		 document.getElementById("mensaje-turno").innerText = ""
 		var acc = window.event || event; //Se guarda el evento o el evento de la ventana.
 		var pos = acc.target || acc.srcElement; // Se guarda el objetivo del evento, o la el elemento fuente del evento.
 		if (pos.id == "bot1") {
